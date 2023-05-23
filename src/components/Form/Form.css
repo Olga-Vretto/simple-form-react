@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-box {
+  width: 100%;
+  background-color: white;
+  padding: 22px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.input {
+  width: 90%;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.195) 1px 2px 6px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.button {
+  width: 50%;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.195) 1px 2px 6px;
+  padding: 5px;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: scale(0.97);
+}
+
+.text {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.error {
+    text-align: center;
+    color: rgb(230, 108, 108);
+}
