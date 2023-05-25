@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import Inputs from '../Inputs/Inputs';
 import './Form.css'
+
 
 const Form = () => {
   const [name, setName] = useState('');
@@ -46,27 +48,16 @@ const Form = () => {
     }
   };
 
+  const inputFields = [
+    { label: 'Name:', type: 'text', name: 'name', value: name, onChange: handleChangeName, error: errMessage.name },
+    { label: 'Email:', type: 'email', name: 'email', value: email, onChange: handleChangeEmail, error: errMessage.email },
+    { label: 'Phone:', type: 'tel', name: 'phone', value: phone, onChange: handleChangePhone, error: errMessage.phone },
+  ];
+
   return (
     <>
       <form onSubmit={handleSubmit} className='form'>
-        <div className='input-box'>
-          <label>Name:</label>
-          <input className='input' type='text' name='name' value={name} onChange={handleChangeName} />
-        </div>
-          {errMessage.name && <p className='error'>{errMessage.name}</p>}
-
-        <div className='input-box'>
-          <label>Email: </label>
-          <input className='input' type='email' name='email' value={email} onChange={handleChangeEmail} />  
-        </div>
-          {errMessage.email && <p className='error'>{errMessage.email}</p>}
-
-        <div className='input-box'>
-          <label>Phone:</label>
-          <input className='input' type='tel' name='phone' value={phone} onChange={handleChangePhone} />
-        </div>
-          {errMessage.phone && <p className='error'>{errMessage.phone}</p>}
-
+        <Inputs fields={inputFields} />
         <button className='button' type='submit'>Submit</button>
       </form>
       {readyMessage && <p className='text'>{readyMessage}</p>}
